@@ -1,0 +1,255 @@
+body {
+    margin: 0;
+    font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-gray);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-dark-gray);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-black);
+}
+
+.to-do-main-container {
+    background-color: var(--color-white);
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border-radius: 1rem;
+    position: relative;
+    justify-content: space-between;
+    border: 1px solid var(--color-pink-darker);
+    box-shadow: 6px 5px 7px rgb(230, 230, 230);
+}
+
+.logo-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 0.5rem 2rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.to-do-list-logo {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-family: var(--font-bebas);
+}
+
+.text-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0 0.7rem;
+    width: 100%;
+    height: 15%;
+}
+
+/* Up-and-comming-tasks*/
+
+.future-tasks-text {
+    font-size: 0.9rem;
+    font-weight: 550;
+}
+
+.add-task-component {
+    width: 100%;
+}
+
+#error-text-empty-input {
+    padding: 0.2rem 0.2rem;
+}
+
+.task {
+    border-bottom: 1px solid darkgray;
+    color: rgb(77, 77, 77);
+    background-color: var(--color-pink-lighter);
+    min-height: 3%;
+    width: 90%;
+    padding: 0.35rem 0.4rem 0.1rem;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* spatiu intre current tasks si butoane */
+
+.task-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.7rem;
+    position: relative;
+    margin-top: 0.7rem;
+}
+
+/* Your current tasks */
+
+.current-tasks-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.tasks-container {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin: 0.5rem 0 1.5rem 0rem;
+    padding-left: 0.3rem;
+    padding-right: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+}
+
+.tasks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.tasks p {
+    width: 90%;
+    background-color: var(--color-pink-lighter);
+    border-top-right-radius: 0.3rem;
+    color: rgb(77, 77, 77);
+    border-top-left-radius: 0.3rem;
+    font-size: 0.85rem;
+}
+
+/* Butoane de adaugare de taskuri in alte feluri */
+
+.other-way-of-adding-tasks {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--color-black);
+    padding: 1.3rem 0 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.other-way-of-adding-tasks-button {
+    background-color: var(--color-white);
+    border-radius: 0.3rem;
+    color: var(--color-black);
+    padding: 0.1rem 0.3rem;
+    height: 2rem;
+    width: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 0.8rem;
+}
+
+.icoons-todo {
+    font-size: 1.2rem;
+    padding-top: 0.2rem;
+}
+
+.header {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+}
+.day-selected {
+    display: flex;
+    justify-content: center;
+}
+
+.current {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+}
+
+/* -------------------------------------------------------------------------------- HOVER SECTION STARTS--------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- HOVER SECTION STARTS---------------------------------------------------------------------------------------- */
+
+.fa:hover {
+    cursor: pointer;
+}
+
+.other-way-of-adding-tasks-button:hover {
+    cursor: pointer;
+}
+
+/* -------------------------------------------------------------------------------- HOVER SECTION ENDS--------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------- HOVER SECTION ENDS--------------------------------------------------------------------------------------- */
+
+@media screen and (min-width: 1100px) {
+    .link-responsive {
+        display: none;
+    }
+
+    .to-do-main-container {
+        height: 100%;
+        width: 100%;
+    }
+
+    .tasks-container {
+        height: 23rem;
+    }
+
+    .day-selected {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .to-do-main-container {
+        width: 100%;
+    }
+    .to-do-list-logo {
+        font-size: 1.8rem;
+    }
+
+    .tasks-container {
+        height: 23rem;
+    }
+    .day-selected {
+        width: 60%;
+    }
+}
+
+/* ATAT ARE TELEFONUL */
+/* ATAT ARE TELEFONUL */
+/* ATAT ARE TELEFONUL */
+
+@media screen and (max-width: 450px) {
+    .logo-date {
+        flex-direction: column;
+    }
+
+    .tasks-container {
+        height: 20rem;
+    }
+    .day-selected {
+        width: 100%;
+    }
+}

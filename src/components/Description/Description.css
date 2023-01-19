@@ -1,0 +1,40 @@
+.description-main-container {
+    display: flex;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-pink-darker);
+    border-radius: 1rem;
+    flex-direction: column;
+}
+
+.description-title {
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 1rem 2rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+@media screen and (min-width: 1100px) {
+    .description-main-container {
+        height: 100%;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .description-main-container {
+        height: 80%;
+        margin: 2rem 2rem;
+    }
+}
+
+/* ATAT ARE TELEFONUL */
+/* ATAT ARE TELEFONUL */
+/* ATAT ARE TELEFONUL */
+
+@media screen and (max-width: 450px) {
+    .description-main-container {
+        margin: 2rem 1rem;
+    }
+}

@@ -1,0 +1,286 @@
+.df-calendar-next-page {
+    display: flex;
+    align-items: center;
+}
+
+.next-page {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    color: black;
+    background-image: linear-gradient(to left, #f7f7f7, #ececec, #e6e6e6);
+    height: 30rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    margin-top: 6rem;
+}
+
+.calendar {
+    margin: 2rem 2rem 0rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--color-black);
+    border-radius: 1.1rem;
+    gap: 1rem;
+    box-shadow: 0px 5px 20px 3px rgb(197, 197, 197);
+}
+
+.calendar-container-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-black);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    padding: 0.3rem 0;
+}
+
+.calendar-container-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.calendar-title {
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    color: var(--color-white);
+    font-weight: 500;
+    font-family: var(--font-bebas);
+    font-size: 2.5rem;
+    cursor: default;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 auto;
+    width: 20%;
+    margin-bottom: 0.2rem;
+    color: var(--color-white);
+}
+
+.arrows-for-current-month {
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 1.5rem;
+    text-align: center;
+}
+
+.calendar-hole-left {
+    height: 2.5rem;
+    width: 2.5rem;
+    position: absolute;
+    background-color: var(--color-pink-light);
+    top: 1.5rem;
+    left: 4%;
+    border-radius: 50%;
+    box-shadow: 2px 2px 1px rgb(182, 176, 176);
+}
+
+.calendar-hole-right {
+    height: 2.5rem;
+    width: 2.5rem;
+    position: absolute;
+    background-color: var(--color-pink-light);
+    top: 1.5rem;
+    right: 4%;
+    border-radius: 50%;
+    box-shadow: 2px 2px 1px rgb(155, 155, 155);
+}
+
+.calendar .day {
+    position: relative;
+    width: calc(100% / 7);
+    height: 6.5rem;
+    display: inline-block;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border: 0.5rem solid var(--color-white);
+    font-family: var(--font-audiowide);
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: rgb(251, 251, 251);
+}
+
+.neata {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.4rem 0.7rem;
+}
+
+.selected {
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.today {
+    color: var(--color-white);
+    background-color: var(--color-black);
+    border-radius: 1rem;
+    padding: 0 0.3rem 0 0.4rem;
+    max-height: 1.3rem;
+    max-width: 1.6rem;
+}
+
+.before {
+    color: gray;
+}
+
+.is-it-today {
+    text-align: center;
+}
+
+.neata > div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.previous {
+    position: absolute;
+    top: 0.1rem;
+    left: 0;
+}
+
+.next {
+    position: absolute;
+    top: 0.1rem;
+    right: 0;
+}
+
+.current {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+        sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 0 1rem;
+}
+
+.day-names {
+    display: flex;
+    justify-content: space-between;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+        sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    cursor: default;
+    margin: 0 0.5rem;
+    height: 2rem;
+    z-index: 2;
+    align-items: center;
+}
+
+.day-names-resize1 {
+    display: none;
+}
+
+.day-names-resize2 {
+    display: flex;
+    justify-content: space-between;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+        sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    cursor: default;
+    background-color: var(--color-white);
+    margin: 0 0.5rem;
+    height: 2rem;
+    z-index: 2;
+    align-items: center;
+    display: none;
+}
+
+.week {
+    width: calc(100% / 7);
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (min-width: 1100px) {
+    .calendar {
+        width: 94%;
+    }
+    .headerforcalendaronly {
+        width: 20% !important;
+    }
+}
+
+/* tableta */
+@media screen and (max-width: 1100px) {
+    .calendar {
+        width: 100%;
+    }
+    .header {
+        width: 25%;
+        padding: 0 0.25rem;
+    }
+
+    .next-page {
+        display: none;
+    }
+
+    .headerforcalendaronly {
+        width: 60% !important;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .header {
+        width: 50%;
+    }
+    .day-names {
+        display: none;
+    }
+    .day-names-resize1 {
+        display: flex;
+    }
+}
+
+/* telefon */
+@media screen and (max-width: 450px) {
+    .day-names-resize1 {
+        display: none;
+    }
+    .day-names-resize2 {
+        display: flex;
+    }
+    .calendar {
+        margin: 1rem 1rem;
+        border: 0;
+    }
+    .calendar-hole-right,
+    .calendar-hole-left {
+        display: none;
+    }
+
+    .header {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .calendar .day {
+        font-size: 0.9rem;
+        height: 5.5rem;
+    }
+}
