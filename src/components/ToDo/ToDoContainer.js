@@ -4,7 +4,7 @@ import TopOfTasksContainer from './TopOfToDoListContainer';
 import Form from '../Form/Form';
 import ToDoList from '../ToDoList/ToDoList';
 import AdditionalWayOfAddingTasks from './AdditionalWayToAddTasks';
-import DateContext from '../DateContextWrap';
+import { AppContext } from '../AppContext';
 
 function ToDoContainer() {
     //State
@@ -12,7 +12,7 @@ function ToDoContainer() {
     const [todos, setTodos] = useState([]);
     const [status, setStatus] = useState('all');
     const [filteredTodos, setFilteredTodos] = useState([]);
-    const { selectedDate } = useContext(DateContext);
+    const { selectedDate } = useContext(AppContext);
 
     //one time
     useEffect(() => {
@@ -56,12 +56,12 @@ function ToDoContainer() {
 
     //local save
     const getLocalTodos = () => {
-        if (localStorage.getItem('todos') === null) {
-            localStorage.setItem('todos', JSON.stringify([]));
-        } else {
-            let todoLocal = JSON.parse(localStorage.getItem('todos'));
-            setTodos(todoLocal);
-        }
+        // if (localStorage.getItem('todos') === null) {
+        //     localStorage.setItem('todos', JSON.stringify([]));
+        // } else {
+        let todoLocal = JSON.parse(localStorage.getItem('todos'));
+        setTodos(todoLocal);
+        // }
     };
 
     return (

@@ -5,10 +5,10 @@ import buildCalendar from './build';
 import CalendarHeader from './headerCalendar';
 import { Link } from 'react-router-dom';
 import { MdNavigateNext } from 'react-icons/md';
-import DateContext from '../DateContextWrap';
+import { AppContext } from '../AppContext';
 
 function Calendar() {
-    const { setSelectedDate } = useContext(DateContext);
+    const { setSelectedDate } = useContext(AppContext);
 
     const [calendar, setCalendar] = useState([]);
     const [value, setValue] = useState(moment());

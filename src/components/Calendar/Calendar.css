@@ -129,21 +129,25 @@
     text-decoration: underline;
 }
 
-.today {
+/* .today {
     color: var(--color-white);
     background-color: var(--color-black);
     border-radius: 1rem;
     padding: 0 0.3rem 0 0.4rem;
     max-height: 1.3rem;
     max-width: 1.6rem;
-}
+} */
 
 .before {
-    color: gray;
+    color: lightgrey;
 }
 
-.is-it-today {
-    text-align: center;
+.today {
+    color: var(--color-white);
+    background-color: var(--color-black);
+    border-radius: 0.6rem;
+    height: 1.4rem;
+    width: 2rem;
 }
 
 .neata > div {

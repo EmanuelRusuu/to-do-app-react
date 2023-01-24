@@ -1,9 +1,16 @@
 .description-main-container {
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+}
+
+.description-container-principal {
+    height: 60%;
     background-color: var(--color-white);
     border: 1px solid var(--color-pink-darker);
-    border-radius: 1rem;
-    flex-direction: column;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
 
 .description-title {
@@ -14,6 +21,158 @@
     padding: 1rem 2rem;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+}
+
+.description-container {
+    padding: 1rem;
+    height: 86%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.importance-and-time {
+    display: flex;
+    gap: 1rem;
+}
+
+.todo-importance,
+.todo-time-select {
+    align-items: center;
+}
+
+.todo-importance,
+.todo-time-select,
+.todo-description {
+    padding: 0.5rem 1rem;
+    display: flex;
+    border: 1px solid var(--color-pink-darker);
+}
+
+.todo-description {
+    border: 0;
+    border-top: 1px solid var(--color-pink-darker);
+    height: 75%;
+}
+
+.todo-importance {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 0.8rem;
+}
+
+.todo-time-select {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pick-hour {
+    display: flex;
+    gap: 1rem;
+}
+
+.input-hour {
+    border: 1px solid var(--color-pink-darker);
+    outline: none;
+}
+
+.submit-button:hover,
+.input-hour:hover {
+    background-color: rgb(223, 223, 223);
+    transition: 0.3s;
+}
+
+.submit-button {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: 1px solid var(--color-pink-darker);
+    padding: 0 0.2rem;
+    cursor: pointer;
+    border-radius: 0.3rem;
+}
+
+.checkboxes {
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.additional {
+    height: 100%;
+}
+
+.additional-elements {
+    width: 100%;
+    height: 40%;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-pink-darker);
+    border-radius: 1rem;
+}
+
+.keep-evidence-title {
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 1rem 2rem;
+}
+
+.keep-evidence-elements {
+    height: 80%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.element {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.element-and-slidebar {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+}
+
+.element-icoon {
+    font-size: 1.5rem;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.slidebar-component {
+    width: 90%;
+}
+
+.no-class-selected {
+    margin: 1rem;
+}
+
+@media screen and (max-height: 950px) {
+    .description-container-principal {
+        height: 55%;
+    }
+    .additional-elements {
+        height: 45%;
+    }
 }
 
 @media screen and (min-width: 1100px) {
@@ -32,6 +191,27 @@
 /* ATAT ARE TELEFONUL */
 /* ATAT ARE TELEFONUL */
 /* ATAT ARE TELEFONUL */
+
+@media screen and (max-width: 500px) {
+    .importance-and-time {
+        flex-direction: column;
+        height: 50%;
+    }
+
+    .todo-importance {
+        width: 100%;
+    }
+
+    .todo-time-select {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .todo-description {
+        height: 50%;
+    }
+}
 
 @media screen and (max-width: 450px) {
     .description-main-container {

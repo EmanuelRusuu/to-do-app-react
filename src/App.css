@@ -13,7 +13,9 @@
     --color-blue-lighter: rgb(169, 222, 255);
     --color-blue-light: rgb(189, 229, 255);
     --color-blue-lightest: rgb(208, 236, 255);
+    --color-default-chrome-blue: #3786ff;
     --color-pink-light: rgb(255, 244, 244);
+
     --font-michroma: 'Michroma', sans-serif; /* cel mai bun pana acum*/
     --font-orbitron: 'Orbitron', sans-serif; /*could work */
     --font-electrolize: 'Electrolize', sans-serif; /*could work cu dimensiuni diferite*/

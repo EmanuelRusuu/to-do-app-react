@@ -4,16 +4,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 import App from './App';
-import DateContext from './components/DateContextWrap';
+import { AppContext } from './components/AppContext';
 
 const Root = () => {
     const [selectedDate, setSelectedDate] = useState(new Date());
+    const [selectedTask, setSelectedTask] = useState(false);
+
+    console.log(selectedTask);
 
     return (
         <BrowserRouter>
-            <DateContext.Provider value={{ selectedDate, setSelectedDate }}>
+            <AppContext.Provider
+                value={{
+                    selectedDate,
+                    setSelectedDate,
+                    selectedTask,
+                    setSelectedTask,
+                }}
+            >
                 <App />
-            </DateContext.Provider>
+            </AppContext.Provider>
         </BrowserRouter>
     );
 };

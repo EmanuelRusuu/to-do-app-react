@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
-import DateContext from '../DateContextWrap';
+import { AppContext } from '../AppContext';
 import './Form.css';
+import moment from 'moment';
 
 const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
-    const { selectedDate } = useContext(DateContext);
+    const { selectedDate } = useContext(AppContext);
     const inputTextHandler = (e) => {
         setInputText(e.target.value);
     };
@@ -15,7 +16,8 @@ const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
                 {
                     text: inputText,
                     completed: false,
-                    date: selectedDate,
+                    date: moment(selectedDate).format('YYYY-MM-DD'),
+                    // date: selectedDate,
                     id: Math.random() * 1000,
                 },
             ]);
