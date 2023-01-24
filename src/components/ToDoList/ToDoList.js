@@ -1,18 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Todo from './Todo';
-import DateContext from '../DateContextWrap';
+import { AppContext } from '../AppContext';
+import moment from 'moment';
 
 const ToDoList = ({ todos, setTodos, filteredTodos }) => {
-    const { selectedDate } = useContext(DateContext);
     const [toDosFilteredByDate, setToDoFilteredByDate] = useState([]);
+    const { selectedDate, setSelectedTask } = useContext(AppContext);
 
     useEffect(() => {
-        const todostemporar = filteredTodos.filter(
+        const todosDisplayed = filteredTodos.filter(
             (todo) =>
                 new Date(todo.date).getTime() ===
-                new Date(selectedDate).getTime()
+                new Date(moment(selectedDate).format('YYYY-MM-DD')).getTime()
         );
-        setToDoFilteredByDate(todostemporar);
+        setToDoFilteredByDate(todosDisplayed);
     }, [filteredTodos, selectedDate]);
 
     return (
@@ -26,6 +27,7 @@ const ToDoList = ({ todos, setTodos, filteredTodos }) => {
                             key={todo.id}
                             todo={todo}
                             text={todo.text}
+                            onClick={() => setSelectedTask(todo)}
                         />
                     ))
                 ) : (
