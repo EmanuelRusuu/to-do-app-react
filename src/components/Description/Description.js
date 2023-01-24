@@ -1,5 +1,5 @@
 import './Description.css';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { BsCup } from 'react-icons/bs';
 import { CgGym } from 'react-icons/cg';
 import CustomSliderWater from './SliderWater';
@@ -9,10 +9,18 @@ import { AppContext } from '../AppContext';
 function Description() {
     const { selectedTask } = useContext(AppContext);
 
+    const [taskDescription, setTaskDescription] = useState(null);
+    const [printTaskDescription, setPrintTaskDescription] = useState(false);
+
+    function getTaskDescription(text) {
+        setTaskDescription(text.target.value);
+    }
+
     return (
         <div className="description-main-container">
             <div className="description-container-principal">
                 <h3 className="description-title">Description</h3>
+                {selectedTask ? <p>{selectedTask.text}</p> : null}
                 {!selectedTask ? (
                     <div className="description-container">
                         <div className="importance-and-time">
@@ -50,8 +58,28 @@ function Description() {
                             </div>
                         </div>
                         <div className="todo-description">
-                            <p>Task description</p>
-                            <div className=""></div>
+                            <div className="p-and-input">
+                                <p>Task description</p>
+                                <div className="input-and-button">
+                                    <input
+                                        type="text"
+                                        onChange={getTaskDescription}
+                                    ></input>
+                                    <button
+                                        onClick={() =>
+                                            setPrintTaskDescription(true)
+                                        }
+                                    >
+                                        OK
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div className="text-description-todo-box">
+                                {printTaskDescription ? (
+                                    <div className="">{taskDescription}</div>
+                                ) : null}
+                            </div>
                         </div>
                     </div>
                 ) : (

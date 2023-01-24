@@ -3,7 +3,8 @@ import { AppContext } from '../AppContext';
 import { useContext } from 'react';
 
 const Todo = ({ text, todo, todos, setTodos, onClick }) => {
-    const { selectedTask, handleClick } = useContext(AppContext);
+    const { handleClick } = useContext(AppContext);
+
     //Events
     const deleteHandler = () => {
         setTodos(todos.filter((el) => el.id !== todo.id));

@@ -4,17 +4,17 @@ import { AppContext } from '../AppContext';
 import moment from 'moment';
 
 const ToggleSelectedTask = () => {
-    const [selectedTask, setSelectedTask] = useState(false);
+    const [selectedTask, setSelectedTask] = useState(true);
     const handleClick = () => {
         setSelectedTask(!selectedTask);
     };
     return { selectedTask, handleClick };
 };
 
-const ToDoList = ({ todos, setTodos, filteredTodos }) => {
+const ToDoList = ({ todos, setTodos, filteredTodos, todo }) => {
     const [toDosFilteredByDate, setToDoFilteredByDate] = useState([]);
     const { selectedDate } = useContext(AppContext);
-    const { selectedTask, handleClick } = ToggleSelectedTask();
+    const { handleClick } = ToggleSelectedTask();
 
     useEffect(() => {
         const todosDisplayed = filteredTodos.filter(
