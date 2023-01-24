@@ -10,8 +10,6 @@ const Root = () => {
     const [selectedDate, setSelectedDate] = useState(new Date());
     const [selectedTask, setSelectedTask] = useState(false);
 
-    console.log(selectedTask);
-
     return (
         <BrowserRouter>
             <AppContext.Provider

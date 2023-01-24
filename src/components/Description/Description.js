@@ -8,7 +8,6 @@ import { AppContext } from '../AppContext';
 
 function Description() {
     const { selectedTask } = useContext(AppContext);
-    console.log(selectedTask);
 
     return (
         <div className="description-main-container">
