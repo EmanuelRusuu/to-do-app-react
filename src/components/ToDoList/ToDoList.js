@@ -3,9 +3,18 @@ import Todo from './Todo';
 import { AppContext } from '../AppContext';
 import moment from 'moment';
 
+const ToggleSelectedTask = () => {
+    const [selectedTask, setSelectedTask] = useState(false);
+    const handleClick = () => {
+        setSelectedTask(!selectedTask);
+    };
+    return { selectedTask, handleClick };
+};
+
 const ToDoList = ({ todos, setTodos, filteredTodos }) => {
     const [toDosFilteredByDate, setToDoFilteredByDate] = useState([]);
-    const { selectedDate, setSelectedTask } = useContext(AppContext);
+    const { selectedDate } = useContext(AppContext);
+    const { selectedTask, handleClick } = ToggleSelectedTask();
 
     useEffect(() => {
         const todosDisplayed = filteredTodos.filter(
@@ -27,7 +36,7 @@ const ToDoList = ({ todos, setTodos, filteredTodos }) => {
                             key={todo.id}
                             todo={todo}
                             text={todo.text}
-                            onClick={() => setSelectedTask(todo)}
+                            onClick={handleClick}
                         />
                     ))
                 ) : (
@@ -38,4 +47,4 @@ const ToDoList = ({ todos, setTodos, filteredTodos }) => {
     );
 };
 
-export default ToDoList;
+export { ToDoList, ToggleSelectedTask };

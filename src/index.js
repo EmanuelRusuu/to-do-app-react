@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import { ToggleSelectedTask } from './components/ToDoList/ToDoList';
 
 import App from './App';
 import { AppContext } from './components/AppContext';
 
 const Root = () => {
     const [selectedDate, setSelectedDate] = useState(new Date());
-    const [selectedTask, setSelectedTask] = useState(false);
-
+    const { selectedTask, handleClick } = ToggleSelectedTask();
     return (
         <BrowserRouter>
             <AppContext.Provider
@@ -17,7 +17,7 @@ const Root = () => {
                     selectedDate,
                     setSelectedDate,
                     selectedTask,
-                    setSelectedTask,
+                    handleClick,
                 }}
             >
                 <App />

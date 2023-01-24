@@ -13,7 +13,7 @@ function Description() {
         <div className="description-main-container">
             <div className="description-container-principal">
                 <h3 className="description-title">Description</h3>
-                {selectedTask ? (
+                {!selectedTask ? (
                     <div className="description-container">
                         <div className="importance-and-time">
                             <div className="todo-importance">
