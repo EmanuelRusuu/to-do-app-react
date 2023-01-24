@@ -56,9 +56,7 @@ function Description() {
                         </div>
                     </div>
                 ) : (
-                    <p className="no-class-selected">
-                        You have no task selected!
-                    </p>
+                    <p className="no-class-selected">No task selected!</p>
                 )}
             </div>
             <div className="additional-elements">
