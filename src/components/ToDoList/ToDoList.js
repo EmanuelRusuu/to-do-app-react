@@ -3,18 +3,9 @@ import Todo from './Todo';
 import { AppContext } from '../AppContext';
 import moment from 'moment';
 
-const ToggleSelectedTask = () => {
-    const [selectedTask, setSelectedTask] = useState(true);
-    const handleClick = () => {
-        setSelectedTask(!selectedTask);
-    };
-    return { selectedTask, handleClick };
-};
-
-const ToDoList = ({ todos, setTodos, filteredTodos, todo }) => {
+const ToDoList = ({ todos, setTodos, filteredTodos }) => {
     const [toDosFilteredByDate, setToDoFilteredByDate] = useState([]);
     const { selectedDate } = useContext(AppContext);
-    const { handleClick } = ToggleSelectedTask();
 
     useEffect(() => {
         const todosDisplayed = filteredTodos.filter(
@@ -25,6 +16,19 @@ const ToDoList = ({ todos, setTodos, filteredTodos, todo }) => {
         setToDoFilteredByDate(todosDisplayed);
     }, [filteredTodos, selectedDate]);
 
+    const handleSelection = (todoId) => {
+        const selectedTask = toDosFilteredByDate.find((todo) => todo.selected);
+        if (selectedTask) {
+            selectedTask.selected = false;
+        }
+
+        const taskToSelect = toDosFilteredByDate.find(
+            (todo) => todo.id === todoId
+        );
+        taskToSelect.selected = true;
+        setToDoFilteredByDate([...toDosFilteredByDate]);
+    };
+
     return (
         <div className="todo-container">
             <ul className="todo-list">
@@ -32,11 +36,12 @@ const ToDoList = ({ todos, setTodos, filteredTodos, todo }) => {
                     toDosFilteredByDate.map((todo) => (
                         <Todo
                             setTodos={setTodos}
-                            todos={todos}
+                            todos={toDosFilteredByDate}
                             key={todo.id}
                             todo={todo}
                             text={todo.text}
-                            onClick={handleClick}
+                            selected={todo.selected}
+                            handleSelection={handleSelection}
                         />
                     ))
                 ) : (
@@ -47,4 +52,4 @@ const ToDoList = ({ todos, setTodos, filteredTodos, todo }) => {
     );
 };
 
-export { ToDoList, ToggleSelectedTask };
+export default ToDoList;

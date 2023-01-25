@@ -1,11 +1,7 @@
 import React from 'react';
-import { AppContext } from '../AppContext';
-import { useContext } from 'react';
+import './ToDoList.css';
 
-const Todo = ({ text, todo, todos, setTodos, onClick }) => {
-    const { handleClick } = useContext(AppContext);
-
-    //Events
+const Todo = ({ text, todo, todos, setTodos, handleSelection }) => {
     const deleteHandler = () => {
         setTodos(todos.filter((el) => el.id !== todo.id));
     };
@@ -24,20 +20,32 @@ const Todo = ({ text, todo, todos, setTodos, onClick }) => {
         );
     };
 
+    const onClickBgChange = (event) => {
+        handleSelection(todo.id);
+    };
+
     return (
         <div className="todo">
-            <li
-                onClick={handleClick}
-                className={`todo-item ${todo.completed ? 'completed' : ''}`}
+            <div
+                className={`width-till-buttons ${
+                    todo.selected ? 'selected-task' : ''
+                }`}
+                onClick={onClickBgChange}
             >
-                {text}
-            </li>
-            <button onClick={completeHandler} className="complete-btn">
-                <i className="fas fa-check"></i>
-            </button>
-            <button onClick={deleteHandler} className="trash-btn">
-                <i className="fas fa-trash"></i>
-            </button>
+                <li
+                    className={`todo-item ${todo.completed ? 'completed' : ''}`}
+                >
+                    {text}
+                </li>
+            </div>
+            <div className="check-and-delete">
+                <button onClick={completeHandler} className="complete-btn">
+                    <i className="fas fa-check"></i>
+                </button>
+                <button onClick={deleteHandler} className="trash-btn">
+                    <i className="fas fa-trash"></i>
+                </button>
+            </div>
         </div>
     );
 };

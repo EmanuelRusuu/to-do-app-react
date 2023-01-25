@@ -17,8 +17,8 @@ const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
                     text: inputText,
                     completed: false,
                     date: moment(selectedDate).format('YYYY-MM-DD'),
-                    // date: selectedDate,
                     id: Math.random() * 1000,
+                    selected: false,
                 },
             ]);
             setInputText('');

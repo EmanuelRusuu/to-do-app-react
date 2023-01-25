@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import './ToDo.css';
 import TopOfTasksContainer from './TopOfToDoListContainer';
 import Form from '../Form/Form';
-import { ToDoList } from '../ToDoList/ToDoList';
+import ToDoList from '../ToDoList/ToDoList';
 import AdditionalWayOfAddingTasks from './AdditionalWayToAddTasks';
 import { AppContext } from '../AppContext';
 

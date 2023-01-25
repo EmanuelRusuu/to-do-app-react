@@ -1,0 +1,60 @@
+.check-and-delete {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+}
+.width-till-buttons {
+    height: 100%;
+    width: 100%;
+}
+
+.selected-task {
+    background-color: rgb(240, 240, 240) !important;
+    transition: all 500ms ease;
+}
+
+.todo {
+    font-size: 0.8rem;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    transition: all 1s ease;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    height: 2rem;
+}
+.todo li {
+    width: 100%;
+    min-height: fit-content;
+    padding: 0rem 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.trash-btn,
+.complete-btn {
+    background: var(--color-black);
+    color: var(--color-white);
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    width: 1.58rem;
+    height: 1.58rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.complete-btn {
+    background-color: #99c24d;
+}
+
+.todo-item .fa-trash,
+.fa-check {
+    pointer-events: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}

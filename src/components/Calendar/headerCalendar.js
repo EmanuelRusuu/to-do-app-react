@@ -32,7 +32,7 @@ function CalendarHeader({ value, setValue }) {
                 {!thisMonth() ? String.fromCharCode(60) : null}
             </div>
             <div className="current">
-                {currDayName()}
+                <span className="selected-day-color">{currDayName()}</span>
                 {currMonthName()} {currYearName()}
             </div>
             <div

@@ -49,7 +49,7 @@ form {
 }
 
 .fa-plus {
-    color: var(--color-default-chrome-blue);
+    color: var(--color-black);
     font-size: 0.9rem;
     border-radius: 1rem;
     text-align: center;
@@ -104,7 +104,7 @@ select {
     right: 0;
     width: 1.58rem;
     height: 1.58rem;
-    background: var(--color-default-chrome-blue);
+    background-color: var(--color-black);
     cursor: pointer;
     pointer-events: none;
     text-align: center;
@@ -123,51 +123,6 @@ select {
     width: 100%;
     list-style: none;
     margin-right: 0.3rem;
-}
-
-.todo {
-    background: white;
-    font-size: 0.8rem;
-    color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 1s ease;
-    margin-bottom: 0.5rem;
-    cursor: pointer;
-}
-.todo li {
-    flex: 1;
-    width: 100%;
-    min-height: fit-content;
-    padding: 0rem 0.5rem;
-}
-
-.trash-btn,
-.complete-btn {
-    background: var(--color-pink-strident-light);
-    color: white;
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
-    width: 1.58rem;
-    height: 1.58rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.complete-btn {
-    background: rgb(123, 218, 194);
-}
-
-.todo-item .fa-trash,
-.fa-check {
-    pointer-events: none;
-}
-
-.completed {
-    text-decoration: line-through;
-    opacity: 0.5;
 }
 
 @media screen and (max-width: 450px) {
