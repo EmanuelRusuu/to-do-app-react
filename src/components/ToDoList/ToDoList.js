@@ -3,7 +3,7 @@ import Todo from './Todo';
 import { AppContext } from '../AppContext';
 import moment from 'moment';
 
-const ToDoList = ({ todos, setTodos, filteredTodos }) => {
+const ToDoList = ({ setTodos, filteredTodos }) => {
     const [toDosFilteredByDate, setToDoFilteredByDate] = useState([]);
     const { selectedDate, setSelectedTask } = useContext(AppContext);
 
@@ -44,6 +44,7 @@ const ToDoList = ({ todos, setTodos, filteredTodos }) => {
                             text={todo.text}
                             selected={todo.selected}
                             handleSelection={handleSelection}
+                            importance={todo.importance}
                         />
                     ))
                 ) : (

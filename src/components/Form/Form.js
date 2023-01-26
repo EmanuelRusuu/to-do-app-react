@@ -5,6 +5,7 @@ import moment from 'moment';
 
 const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
     const { selectedDate } = useContext(AppContext);
+
     const inputTextHandler = (e) => {
         setInputText(e.target.value);
     };
@@ -19,6 +20,7 @@ const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
                     date: moment(selectedDate).format('YYYY-MM-DD'),
                     id: Math.random() * 1000,
                     selected: false,
+                    importance: false,
                 },
             ]);
             setInputText('');

@@ -7,21 +7,34 @@ import CustomSliderWorkout from './SliderWorkout';
 import { AppContext } from '../AppContext';
 
 function Description() {
-    const { selectedTask } = useContext(AppContext);
+    const { selectedTask, importance, setImportance, todos, setTodos } =
+        useContext(AppContext);
 
-    // const [taskDescription, setTaskDescription] = useState(null);
-    // const [printTaskDescription, setPrintTaskDescription] = useState(false);
+    const importanceHandler = () => {
+        setTodos(
+            todos.map((item) => {
+                if (item.id === selectedTask.id) {
+                    return {
+                        ...item,
+                        importance: !item.importance,
+                    };
+                }
+                return item;
+            })
+        );
+    };
 
-    // function getTaskDescription(text) {
-    //     setTaskDescription(text.target.value);
-    // }
     return (
         <div className="description-main-container">
             <div className="description-container-principal">
                 <div className="description-title">
                     <h3>Description</h3>
                     <p className="selected-task-title">
-                        {selectedTask ? selectedTask.text : 'Task title'}
+                        {selectedTask && selectedTask.completed
+                            ? 'Task completed'
+                            : selectedTask
+                            ? selectedTask.text
+                            : 'Task title'}
                     </p>
                 </div>
                 {selectedTask ? (
@@ -33,7 +46,11 @@ function Description() {
                                         <p>Important task</p>
                                         <input
                                             type="checkbox"
-                                            name="checkbox"
+                                            checked={importance}
+                                            onChange={() => {
+                                                importanceHandler();
+                                                setImportance(!importance);
+                                            }}
                                         ></input>
                                     </label>
                                 </div>
@@ -63,35 +80,12 @@ function Description() {
                         <div className="todo-description">
                             <div className="p-and-input">
                                 <p>Task description</p>
-                                {/* <div className="input-and-button">
-                                    <input
-                                        type="text"
-                                        onChange={getTaskDescription}
-                                    ></input>
-                                    <button
-                                        onClick={() =>
-                                            setPrintTaskDescription(true)
-                                        }
-                                    >
-                                        OK
-                                    </button>
-                                </div> */}
                             </div>
-
-                            {/* <div className="text-description-todo-box">
-                                {printTaskDescription ? (
-                                    <div className="">{taskDescription}</div>
-                                ) : null}
-                            </div> */}
                         </div>
                     </div>
                 ) : (
                     <p className="no-class-selected">No task selected</p>
                 )}
-
-                {/* {selectedTask ? <p>{selectedTask.text}</p> : null}
-                {!selectedTask ? (
-                */}
             </div>
             <div className="additional-elements">
                 <div className="additional">
