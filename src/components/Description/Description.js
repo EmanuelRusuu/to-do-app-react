@@ -20,7 +20,9 @@ function Description() {
             <div className="description-container-principal">
                 <div className="description-title">
                     <h3>Description</h3>
-                    <p>{selectedTask ? selectedTask.text : 'Task title'}</p>
+                    <p className="selected-task-title">
+                        {selectedTask ? selectedTask.text : 'Task title'}
+                    </p>
                 </div>
                 {selectedTask ? (
                     <div className="description-container">
@@ -84,15 +86,12 @@ function Description() {
                         </div>
                     </div>
                 ) : (
-                    <p>No task selected</p>
+                    <p className="no-class-selected">No task selected</p>
                 )}
 
                 {/* {selectedTask ? <p>{selectedTask.text}</p> : null}
                 {!selectedTask ? (
-                    
-                ) : (
-                    <p className="no-class-selected">No task selected!</p>
-                )} */}
+                */}
             </div>
             <div className="additional-elements">
                 <div className="additional">

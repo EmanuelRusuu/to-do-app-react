@@ -14,7 +14,8 @@ const ToDoList = ({ todos, setTodos, filteredTodos }) => {
                 new Date(moment(selectedDate).format('YYYY-MM-DD')).getTime()
         );
         setToDoFilteredByDate(todosDisplayed);
-    }, [filteredTodos, selectedDate]);
+        setSelectedTask(null);
+    }, [filteredTodos, selectedDate, setSelectedTask]);
 
     const handleSelection = (todoId) => {
         const selectedTask = toDosFilteredByDate.find((todo) => todo.selected);

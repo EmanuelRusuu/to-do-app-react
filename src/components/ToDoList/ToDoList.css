@@ -23,13 +23,12 @@
     transition: all 1s ease;
     margin-bottom: 0.5rem;
     cursor: pointer;
-    height: 2rem;
+    min-height: 2rem;
 }
 .todo li {
     width: 100%;
     min-height: fit-content;
-    padding: 0rem 0.5rem;
-    padding-top: 0.5rem;
+    padding: 0.5rem 0.5rem;
 }
 
 .trash-btn,
