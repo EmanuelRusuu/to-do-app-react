@@ -8,12 +8,16 @@ import { AppContext } from './components/AppContext';
 
 const Root = () => {
     const [selectedDate, setSelectedDate] = useState(new Date());
+    const [selectedTask, setSelectedTask] = useState(null);
+
     return (
         <BrowserRouter>
             <AppContext.Provider
                 value={{
                     selectedDate,
                     setSelectedDate,
+                    selectedTask,
+                    setSelectedTask,
                 }}
             >
                 <App />

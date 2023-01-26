@@ -1,5 +1,5 @@
 import './Description.css';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { BsCup } from 'react-icons/bs';
 import { CgGym } from 'react-icons/cg';
 import CustomSliderWater from './SliderWater';
@@ -9,19 +9,20 @@ import { AppContext } from '../AppContext';
 function Description() {
     const { selectedTask } = useContext(AppContext);
 
-    const [taskDescription, setTaskDescription] = useState(null);
-    const [printTaskDescription, setPrintTaskDescription] = useState(false);
+    // const [taskDescription, setTaskDescription] = useState(null);
+    // const [printTaskDescription, setPrintTaskDescription] = useState(false);
 
-    function getTaskDescription(text) {
-        setTaskDescription(text.target.value);
-    }
-
+    // function getTaskDescription(text) {
+    //     setTaskDescription(text.target.value);
+    // }
     return (
         <div className="description-main-container">
             <div className="description-container-principal">
-                <h3 className="description-title">Description</h3>
-                {selectedTask ? <p>{selectedTask.text}</p> : null}
-                {!selectedTask ? (
+                <div className="description-title">
+                    <h3>Description</h3>
+                    <p>{selectedTask ? selectedTask.text : 'Task title'}</p>
+                </div>
+                {selectedTask ? (
                     <div className="description-container">
                         <div className="importance-and-time">
                             <div className="todo-importance">
@@ -60,7 +61,7 @@ function Description() {
                         <div className="todo-description">
                             <div className="p-and-input">
                                 <p>Task description</p>
-                                <div className="input-and-button">
+                                {/* <div className="input-and-button">
                                     <input
                                         type="text"
                                         onChange={getTaskDescription}
@@ -72,19 +73,26 @@ function Description() {
                                     >
                                         OK
                                     </button>
-                                </div>
+                                </div> */}
                             </div>
 
-                            <div className="text-description-todo-box">
+                            {/* <div className="text-description-todo-box">
                                 {printTaskDescription ? (
                                     <div className="">{taskDescription}</div>
                                 ) : null}
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 ) : (
-                    <p className="no-class-selected">No task selected!</p>
+                    <p>No task selected</p>
                 )}
+
+                {/* {selectedTask ? <p>{selectedTask.text}</p> : null}
+                {!selectedTask ? (
+                    
+                ) : (
+                    <p className="no-class-selected">No task selected!</p>
+                )} */}
             </div>
             <div className="additional-elements">
                 <div className="additional">

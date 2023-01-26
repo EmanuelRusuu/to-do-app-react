@@ -5,7 +5,7 @@ import moment from 'moment';
 
 const ToDoList = ({ todos, setTodos, filteredTodos }) => {
     const [toDosFilteredByDate, setToDoFilteredByDate] = useState([]);
-    const { selectedDate } = useContext(AppContext);
+    const { selectedDate, setSelectedTask } = useContext(AppContext);
 
     useEffect(() => {
         const todosDisplayed = filteredTodos.filter(
@@ -27,6 +27,7 @@ const ToDoList = ({ todos, setTodos, filteredTodos }) => {
         );
         taskToSelect.selected = true;
         setToDoFilteredByDate([...toDosFilteredByDate]);
+        setSelectedTask(taskToSelect);
     };
 
     return (
