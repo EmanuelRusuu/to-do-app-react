@@ -29,13 +29,17 @@ function Description() {
             <div className="description-container-principal">
                 <div className="description-title">
                     <h3>Description</h3>
-                    <p className="selected-task-title">
+                    <span className="selected-task-title">
+                        <span className="important-class-task">
+                            {importance && <p>Important task!</p>}
+                        </span>
+
                         {selectedTask && selectedTask.completed
                             ? 'Task completed'
                             : selectedTask
                             ? selectedTask.text
                             : 'Task title'}
-                    </p>
+                    </span>
                 </div>
                 {selectedTask ? (
                     <div className="description-container">
@@ -58,22 +62,24 @@ function Description() {
                             <div className="todo-time-select">
                                 <div className="pick-hour">
                                     <p>Deadline</p>
-                                    <input
-                                        className="input-hour"
-                                        type="number"
-                                        min={0}
-                                        max={24}
-                                        placeholder="0-24"
-                                        onKeyDown={(event) => {
-                                            event.preventDefault();
-                                        }}
-                                    ></input>
-                                    <button
-                                        className="submit-button"
-                                        type="submit"
-                                    >
-                                        OK
-                                    </button>
+                                    <div className="deadline-and-butons">
+                                        <input
+                                            className="input-hour"
+                                            type="number"
+                                            min={0}
+                                            max={24}
+                                            placeholder="0-24h"
+                                            onKeyDown={(event) => {
+                                                event.preventDefault();
+                                            }}
+                                        ></input>
+                                        <button
+                                            className="submit-button"
+                                            type="submit"
+                                        >
+                                            OK
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

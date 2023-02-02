@@ -1,10 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './ToDoList.css';
 
-import { AppContext } from '../AppContext';
-
 const Todo = ({ text, todo, todos, setTodos, handleSelection }) => {
-    const { importance } = useContext(AppContext);
     const deleteHandler = () => {
         setTodos(todos.filter((el) => el.id !== todo.id));
     };
@@ -42,7 +39,6 @@ const Todo = ({ text, todo, todos, setTodos, handleSelection }) => {
                 >
                     {text}
                 </li>
-                {importance && <p>IMPORTANT</p>}
             </div>
             <div className="check-and-delete">
                 <button onClick={completeHandler} className="complete-btn">
