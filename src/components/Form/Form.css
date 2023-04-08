@@ -12,8 +12,6 @@ form {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    gap: 1.5rem;
-    margin: 0 0.3rem;
 }
 .todo-input {
     height: 1.58rem;
@@ -45,7 +43,7 @@ form {
 .todo-input-todo-button-align-center-gap {
     display: flex;
     gap: 0.5rem;
-    width: 70%;
+    width: 68%;
 }
 
 .fa-plus {
@@ -73,6 +71,7 @@ select {
     box-shadow: none;
     border: 0 !important;
     background-image: none;
+    width: 28%;
 }
 
 /* Custom Select */

@@ -3,8 +3,6 @@ import moment from 'moment';
 import './Calendar.css';
 import buildCalendar from './build';
 import CalendarHeader from './headerCalendar';
-import { Link } from 'react-router-dom';
-import { MdNavigateNext } from 'react-icons/md';
 import { AppContext } from '../AppContext';
 
 function Calendar() {
@@ -51,76 +49,59 @@ function Calendar() {
     }
 
     return (
-        <div className="df-calendar-next-page">
-            <div className="calendar">
-                <div className="calendar-container-top">
-                    <h1 className="calendar-title">Calendar</h1>
-                    <span className="calendar-hole-left"></span>
-                    <span className="calendar-hole-right"></span>
-                    <CalendarHeader value={value} setValue={setValue} />
-                </div>
+        <div className="calendar">
+            <div className="calendar-container-top">
+                <CalendarHeader value={value} setValue={setValue} />
+            </div>
 
-                <div className="calendar-container-bottom">
-                    <div className="day-names">
-                        {[
-                            'Sunday',
-                            'Monday',
-                            'Tuesday',
-                            'Wednesday',
-                            'Thursday',
-                            'Friday',
-                            'Saturday',
-                        ].map((d) => (
-                            <div className="week">{d}</div>
-                        ))}
-                    </div>
-
-                    <div className="day-names-resize1">
-                        {[
-                            'Sun',
-                            'Mon',
-                            'Tues',
-                            'Wed',
-                            'Thurs',
-                            'Fri',
-                            'Sat',
-                        ].map((d) => (
-                            <div className="week">{d}</div>
-                        ))}
-                    </div>
-
-                    <div className="day-names-resize2">
-                        {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d) => (
-                            <div className="week">{d}</div>
-                        ))}
-                    </div>
-
-                    {calendar.map((week) => (
-                        <div>
-                            {week.map((day) => (
-                                <div
-                                    className={`day`}
-                                    onClick={() =>
-                                        !beforeToday(day) &&
-                                        handleDateClick(day)
-                                    }
-                                >
-                                    <div className="neata">
-                                        <div className={dayStyles(day)}>
-                                            {`${day.format('D').toString()}`}
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+            <div className="calendar-container-bottom">
+                <div className="day-names">
+                    {[
+                        'Sunday',
+                        'Monday',
+                        'Tuesday',
+                        'Wednesday',
+                        'Thursday',
+                        'Friday',
+                        'Saturday',
+                    ].map((d) => (
+                        <div className="week">{d}</div>
                     ))}
                 </div>
-            </div>
-            <Link to="/todo">
-                <div className="next-page">
-                    <MdNavigateNext />
+
+                <div className="day-names-resize1">
+                    {['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'].map(
+                        (d) => (
+                            <div className="week">{d}</div>
+                        )
+                    )}
                 </div>
-            </Link>
+
+                <div className="day-names-resize2">
+                    {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d) => (
+                        <div className="week">{d}</div>
+                    ))}
+                </div>
+
+                {calendar.map((week) => (
+                    <div>
+                        {week.map((day) => (
+                            <div
+                                className={`day`}
+                                onClick={() =>
+                                    !beforeToday(day) && handleDateClick(day)
+                                }
+                            >
+                                <div className="neata">
+                                    <div className={dayStyles(day)}>
+                                        {`${day.format('D').toString()}`}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }

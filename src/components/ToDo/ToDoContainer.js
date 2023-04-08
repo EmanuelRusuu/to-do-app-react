@@ -3,7 +3,6 @@ import './ToDo.css';
 import TopOfTasksContainer from './TopOfToDoListContainer';
 import Form from '../Form/Form';
 import ToDoList from '../ToDoList/ToDoList';
-import AdditionalWayOfAddingTasks from './AdditionalWayToAddTasks';
 import { AppContext } from '../AppContext';
 
 function ToDoContainer() {
@@ -66,11 +65,12 @@ function ToDoContainer() {
 
     return (
         <div className="to-do-main-container">
-            <div className="todo-topvsother">
+            <div className="topoftaskscontainer">
                 <TopOfTasksContainer />
+            </div>
+            <div className="task-form-and-tasks">
                 <div className="text-box">
-                    <h4 className="future-tasks-text">Future tasks</h4>
-
+                    <h4 className="future-tasks-text">Add a task</h4>
                     <Form
                         inputText={inputText}
                         todos={todos}
@@ -81,7 +81,6 @@ function ToDoContainer() {
                 </div>
                 <div className="task-container">
                     <h4 className="current-tasks-text">Current tasks</h4>
-
                     <div className="tasks-container">
                         <ToDoList
                             filteredTodos={filteredTodos}
@@ -91,7 +90,6 @@ function ToDoContainer() {
                     </div>
                 </div>
             </div>
-            <AdditionalWayOfAddingTasks />
         </div>
     );
 }
