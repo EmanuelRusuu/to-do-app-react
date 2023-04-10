@@ -42,6 +42,9 @@ body {
 .topoftaskscontainer {
     height: 7%;
     width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
 }
 
 .task-form-and-tasks {

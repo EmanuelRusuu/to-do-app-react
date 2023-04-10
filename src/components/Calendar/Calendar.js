@@ -25,7 +25,7 @@ function Calendar() {
 
     const handleDateClick = (day) => {
         setValue(day);
-        localStorage.setItem('selectedDate', day.format());
+        // localStorage.setItem('selectedDate', day.format());
         setSelectedDate(day.format('YYYY-MM-DD'));
     };
 

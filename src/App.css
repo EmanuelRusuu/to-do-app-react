@@ -4,6 +4,8 @@
     --color-black-dark: rgb(29, 29, 29);
     --color-dark-gray: rgb(58, 58, 58);
     --color-gray: gray;
+    --color-gray-lightest: rgb(245, 245, 245);
+    --color-gray-light: rgb(233, 231, 231);
     --color-pink: rgb(255, 211, 217);
     --color-pink-strident: rgb(235, 148, 160);
     --color-pink-strident-light: rgb(255, 146, 161);

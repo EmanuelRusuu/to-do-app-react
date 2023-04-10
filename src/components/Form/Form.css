@@ -18,7 +18,8 @@ form {
     width: 100%;
     padding: 0.5rem;
     font-size: 0.8rem;
-    border: 1px solid var(--color-pink-darker);
+    border: 0;
+    border-bottom: 1px solid var(--color-gray-lightest);
     background-color: var(--color-white);
     outline: 0;
 }
@@ -34,7 +35,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--color-pink-darker);
+    border: 0;
     background-color: var(--color-white);
     outline: 0;
     cursor: pointer;
@@ -43,7 +44,7 @@ form {
 .todo-input-todo-button-align-center-gap {
     display: flex;
     gap: 0.5rem;
-    width: 68%;
+    width: 65%;
 }
 
 .fa-plus {
@@ -69,7 +70,7 @@ select {
     appearance: none;
     outline: 0;
     box-shadow: none;
-    border: 0 !important;
+    border: 0;
     background-image: none;
     width: 28%;
 }
@@ -83,7 +84,7 @@ select {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--color-pink-darker);
+    border: 1px solid var(--color-gray-light);
 }
 select {
     color: var(--color-pink-dark);
