@@ -24,7 +24,7 @@ function CalendarHeader({ value, setValue }) {
     }
 
     return (
-        <div className="header headerforcalendaronly">
+        <div className="header">
             <div
                 className="arrows-for-current-month previous"
                 onClick={() => !thisMonth() && setValue(prevMonth())}

@@ -6,18 +6,18 @@
     /* border: 1px solid var(--color-black); */
     box-shadow: 0px 5px 20px 3px rgb(240, 240, 240);
     width: 68%;
-    height: 85%;
     border-radius: 0.5rem;
 }
 
 .calendar-container-top {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    /* background-color: var(--color-black); */
+    align-items: center;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     padding: 0.3rem 0;
+    width: 100%;
 }
 
 .calendar-container-bottom {
@@ -40,22 +40,18 @@
 
 .header {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
     cursor: default;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
     padding: 0 auto;
-    width: 20%;
+    width: 50%;
     margin-bottom: 0.2rem;
     color: var(--color-black);
 }
 
 .arrows-for-current-month {
     cursor: pointer;
-    font-size: 1.2rem;
-    width: 1.5rem;
+    font-size: 1.3rem;
     text-align: center;
 }
 
@@ -64,7 +60,6 @@
     width: calc(100% / 7);
     height: 6.5rem;
     display: inline-block;
-    background-color: white;
     padding: 0;
     margin: 0;
     border-bottom-left-radius: 1rem;
@@ -73,7 +68,7 @@
     font-family: var(--font-audiowide);
     font-size: 1rem;
     cursor: pointer;
-    background-color: rgb(251, 251, 251);
+    background-color: var(--color-white-lightest);
 }
 
 .neata {
@@ -100,15 +95,6 @@
     margin-right: 0.3rem;
 }
 
-/* .today {
-    color: var(--color-white);
-    background-color: var(--color-black);
-    border-radius: 1rem;
-    padding: 0 0.3rem 0 0.4rem;
-    max-height: 1.3rem;
-    max-width: 1.6rem;
-} */
-
 .before {
     color: lightgrey;
 }
@@ -129,18 +115,6 @@
     flex-direction: column;
 }
 
-.previous {
-    position: absolute;
-    top: 0.1rem;
-    left: 0;
-}
-
-.next {
-    position: absolute;
-    top: 0.1rem;
-    right: 0;
-}
-
 .current {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
         Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
@@ -148,6 +122,7 @@
     font-size: 1.2rem;
     font-weight: 400;
     padding: 0 1rem;
+    margin: 0 1rem;
 }
 
 .day-names {

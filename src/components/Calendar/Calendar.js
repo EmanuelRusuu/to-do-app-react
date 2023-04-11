@@ -46,8 +46,10 @@ export default function Calendar() {
         return '';
     }
 
+    const rows = calendar.length === 5 ? '85%' : '95%';
+
     return (
-        <div className="calendar">
+        <div className="calendar" style={{ height: rows }}>
             <div className="calendar-container-top">
                 <CalendarHeader value={value} setValue={setValue} />
             </div>

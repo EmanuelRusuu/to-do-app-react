@@ -7,8 +7,6 @@
     --color-gray-lightest: rgb(245, 245, 245);
     --color-gray-light: rgb(233, 231, 231);
     --color-pink: rgb(255, 211, 217);
-    --color-pink-strident: rgb(235, 148, 160);
-    --color-pink-strident-light: rgb(255, 146, 161);
     --color-pink-darker: rgb(209, 191, 191);
     --color-pink-dark: rgb(179, 165, 165);
     --color-pink-lighter: rgb(255, 223, 229);
@@ -17,6 +15,7 @@
     --color-blue-lightest: rgb(208, 236, 255);
     --color-default-chrome-blue: #3786ff;
     --color-pink-light: rgb(255, 244, 244);
+    --color-white-lightest: rgb(251, 251, 251);
 
     --font-michroma: 'Michroma', sans-serif; /* cel mai bun pana acum*/
     --font-orbitron: 'Orbitron', sans-serif; /*could work */
