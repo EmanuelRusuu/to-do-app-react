@@ -3,7 +3,13 @@ import { AppContext } from '../AppContext';
 import './Form.css';
 import moment from 'moment';
 
-const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
+export default function Form({
+    setInputText,
+    todos,
+    setTodos,
+    inputText,
+    setStatus,
+}) {
     const { selectedDate } = useContext(AppContext);
 
     const inputTextHandler = (e) => {
@@ -19,8 +25,6 @@ const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
                     completed: false,
                     date: moment(selectedDate).format('YYYY-MM-DD'),
                     id: Math.random() * 1000,
-                    selected: false,
-                    importance: false,
                 },
             ]);
             setInputText('');
@@ -60,6 +64,4 @@ const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
             </div>
         </form>
     );
-};
-
-export default Form;
+}

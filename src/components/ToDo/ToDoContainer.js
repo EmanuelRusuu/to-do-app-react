@@ -4,7 +4,7 @@ import Form from '../Form/Form';
 import ToDoList from '../ToDoList/ToDoList';
 import { AppContext } from '../AppContext';
 
-function ToDoContainer() {
+export default function ToDoContainer() {
     //State
     const [inputText, setInputText] = useState('');
     const [todos, setTodos] = useState([]);
@@ -54,12 +54,12 @@ function ToDoContainer() {
 
     //local save
     const getLocalTodos = () => {
-        // if (localStorage.getItem('todos') === null) {
-        //     localStorage.setItem('todos', JSON.stringify([]));
-        // } else {
-        let todoLocal = JSON.parse(localStorage.getItem('todos'));
-        setTodos(todoLocal);
-        // }
+        if (localStorage.getItem('todos') === null) {
+            localStorage.setItem('todos', JSON.stringify([]));
+        } else {
+            let todoLocal = JSON.parse(localStorage.getItem('todos'));
+            setTodos(todoLocal);
+        }
     };
 
     return (
@@ -92,5 +92,3 @@ function ToDoContainer() {
         </div>
     );
 }
-
-export default ToDoContainer;

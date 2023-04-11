@@ -1,11 +1,10 @@
 import React from 'react';
 import './ToDoList.css';
 
-const Todo = ({ text, todo, todos, setTodos, handleSelection }) => {
+export default function Todo({ text, todo, todos, setTodos }) {
     const deleteHandler = () => {
         setTodos(todos.filter((el) => el.id !== todo.id));
     };
-
     const completeHandler = () => {
         setTodos(
             todos.map((item) => {
@@ -20,22 +19,13 @@ const Todo = ({ text, todo, todos, setTodos, handleSelection }) => {
         );
     };
 
-    const onClickTaskSelection = (event) => {
-        handleSelection(todo.id);
-    };
-
     return (
         <div className="todo">
-            <div
-                className={`width-till-buttons ${
-                    todo.selected ? 'selected-task' : ''
-                }`}
-                onClick={onClickTaskSelection}
-            >
+            <div className={`width-till-buttons`}>
                 <li
                     className={`todo-item ${
                         todo.completed ? 'completed' : ''
-                    } ${todo.importance ? 'important' : ''}`}
+                    } `}
                 >
                     {text}
                 </li>
@@ -50,6 +40,4 @@ const Todo = ({ text, todo, todos, setTodos, handleSelection }) => {
             </div>
         </div>
     );
-};
-
-export default Todo;
+}

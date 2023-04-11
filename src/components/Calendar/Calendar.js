@@ -5,9 +5,8 @@ import buildCalendar from './build';
 import CalendarHeader from './headerCalendar';
 import { AppContext } from '../AppContext';
 
-function Calendar() {
+export default function Calendar() {
     const { setSelectedDate } = useContext(AppContext);
-
     const [calendar, setCalendar] = useState([]);
     const [value, setValue] = useState(moment());
 
@@ -25,7 +24,6 @@ function Calendar() {
 
     const handleDateClick = (day) => {
         setValue(day);
-        // localStorage.setItem('selectedDate', day.format());
         setSelectedDate(day.format('YYYY-MM-DD'));
     };
 
@@ -105,4 +103,3 @@ function Calendar() {
         </div>
     );
 }
-export default Calendar;

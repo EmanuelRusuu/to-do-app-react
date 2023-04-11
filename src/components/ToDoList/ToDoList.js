@@ -3,7 +3,7 @@ import Todo from './Todo';
 import { AppContext } from '../AppContext';
 import moment from 'moment';
 
-const ToDoList = ({ setTodos, filteredTodos }) => {
+export default function ToDoList({ setTodos, filteredTodos }) {
     const [toDosFilteredByDate, setToDoFilteredByDate] = useState([]);
     const { selectedDate, setSelectedTask } = useContext(AppContext);
 
@@ -17,20 +17,6 @@ const ToDoList = ({ setTodos, filteredTodos }) => {
         setSelectedTask(null);
     }, [filteredTodos, selectedDate, setSelectedTask]);
 
-    const handleSelection = (todoId) => {
-        const selectedTask = toDosFilteredByDate.find((todo) => todo.selected);
-        if (selectedTask) {
-            selectedTask.selected = false;
-        }
-
-        const taskToSelect = toDosFilteredByDate.find(
-            (todo) => todo.id === todoId
-        );
-        taskToSelect.selected = true;
-        setToDoFilteredByDate([...toDosFilteredByDate]);
-        setSelectedTask(taskToSelect);
-    };
-
     return (
         <div className="todo-container">
             <ul className="todo-list">
@@ -42,9 +28,6 @@ const ToDoList = ({ setTodos, filteredTodos }) => {
                             key={todo.id}
                             todo={todo}
                             text={todo.text}
-                            selected={todo.selected}
-                            handleSelection={handleSelection}
-                            importance={todo.importance}
                         />
                     ))
                 ) : (
@@ -53,6 +36,4 @@ const ToDoList = ({ setTodos, filteredTodos }) => {
             </ul>
         </div>
     );
-};
-
-export default ToDoList;
+}
