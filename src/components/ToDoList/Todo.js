@@ -1,10 +1,11 @@
 import React from 'react';
 import './ToDoList.css';
 
-export default function Todo({ text, todo, todos, setTodos }) {
+export default function Todo({ text, todo, setTodos, todos }) {
     const deleteHandler = () => {
         setTodos(todos.filter((el) => el.id !== todo.id));
     };
+
     const completeHandler = () => {
         setTodos(
             todos.map((item) => {

@@ -3,9 +3,9 @@ import Todo from './Todo';
 import { AppContext } from '../AppContext';
 import moment from 'moment';
 
-export default function ToDoList({ setTodos, filteredTodos }) {
-    const [toDosFilteredByDate, setToDoFilteredByDate] = useState([]);
+export default function ToDoList({ setTodos, filteredTodos, todos }) {
     const { selectedDate, setSelectedTask } = useContext(AppContext);
+    const [toDosFilteredByDate, setToDoFilteredByDate] = useState([]);
 
     useEffect(() => {
         const todosDisplayed = filteredTodos.filter(
@@ -24,10 +24,10 @@ export default function ToDoList({ setTodos, filteredTodos }) {
                     toDosFilteredByDate.map((todo) => (
                         <Todo
                             setTodos={setTodos}
-                            todos={toDosFilteredByDate}
                             key={todo.id}
                             todo={todo}
                             text={todo.text}
+                            todos={todos}
                         />
                     ))
                 ) : (
