@@ -41,25 +41,6 @@
     user-select: none;
 }
 
-/* .before-page {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-} */
-/* .before-page-icoon {
-    font-size: 2.5rem;
-    display: flex;
-    align-items: center;
-    font-size: 2.5rem;
-    color: black;
-    background-image: linear-gradient(to right, #f7f7f7, #ececec, #e6e6e6);
-    height: 30rem;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-} */
-
 .main-container {
     height: 100vh;
     width: 100vw;
@@ -70,111 +51,8 @@
     align-items: center;
 }
 
-/* .navbar {
-    width: 100vw;
-    height: fit-content;
-    padding: 1rem 3rem;
-    background-color: var(--color-black-dark);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.navbar .links {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.navbar .links .link {
-    color: white;
-    text-decoration: none;
-} */
-/* 
-.before-and-todo-desc-wrap {
-    width: 100%;
-    height: 80%;
-    display: flex;
-    margin: 2rem 0;
-    align-items: center;
-}
-
-.todo-desc {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-} */
-
-/* @media screen and (min-width: 1100px) {
-    .link-responsive {
-        display: none;
-    }
-
-    .todo-desc {
-        height: 100%;
-    }
-
-    .desc-resp,
-    .todo-resp {
-        width: 32rem;
-        height: 100%;
+@media screen and (max-width: 1300px) {
+    .main-container {
+        padding: 1rem;
     }
 }
-
-@media screen and (max-width: 1250px) {
-    .desc-resp,
-    .todo-resp {
-        width: 27rem;
-    }
-
-    .todo-desc {
-        gap: 2rem;
-    }
-}
-
-@media screen and (max-width: 1100px) {
-    .before-page-icoon {
-        display: none;
-    }
-    .desc-resp {
-        display: none;
-    }
-
-    .todo-resp {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        margin: 0 2rem;
-    }
-
-    .navbar {
-        padding: 1rem 2rem;
-    }
-
-    .todo-desc {
-        height: 100%;
-    }
-}
-
-/* ATAT ARE TELEFONUL */
-/* ATAT ARE TELEFONUL */
-/* ATAT ARE TELEFONUL */
-
-/* @media screen and (max-width: 450px) {
-    .todo-resp {
-        margin: 0 1rem 1rem;
-    }
-
-    .navbar {
-        padding: 0.8rem 1rem;
-        flex-direction: column;
-    }
-
-    .logo {
-        display: none;
-    }
-} */

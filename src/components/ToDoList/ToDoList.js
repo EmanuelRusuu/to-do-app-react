@@ -4,7 +4,7 @@ import { AppContext } from '../AppContext';
 import moment from 'moment';
 
 export default function ToDoList({ setTodos, filteredTodos, todos }) {
-    const { selectedDate, setSelectedTask } = useContext(AppContext);
+    const { selectedDate } = useContext(AppContext);
     const [toDosFilteredByDate, setToDoFilteredByDate] = useState([]);
 
     useEffect(() => {
@@ -14,8 +14,7 @@ export default function ToDoList({ setTodos, filteredTodos, todos }) {
                 new Date(moment(selectedDate).format('YYYY-MM-DD')).getTime()
         );
         setToDoFilteredByDate(todosDisplayed);
-        setSelectedTask(null);
-    }, [filteredTodos, selectedDate, setSelectedTask]);
+    }, [filteredTodos, selectedDate]);
 
     return (
         <div className="todo-container">

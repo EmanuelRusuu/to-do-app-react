@@ -8,20 +8,7 @@ import { AppContext } from './components/AppContext';
 
 const Root = () => {
     const [selectedDate, setSelectedDate] = useState(new Date());
-    const [selectedTask, setSelectedTask] = useState(null);
     const [todos, setTodos] = useState([]);
-    const [importance, setImportance] = useState(false);
-
-    // useEffect(() => {
-    //     if (selectedTask) {
-    //         const updatedTask = todos.find(
-    //             (task) => task.id === selectedTask.id
-    //         );
-    //         if (updatedTask) {
-    //             setSelectedTask(updatedTask);
-    //         }
-    //     }
-    // }, [todos, selectedTask, setSelectedTask]);
 
     return (
         <BrowserRouter>
@@ -29,10 +16,6 @@ const Root = () => {
                 value={{
                     selectedDate,
                     setSelectedDate,
-                    selectedTask,
-                    setSelectedTask,
-                    importance,
-                    setImportance,
                     todos,
                     setTodos,
                 }}
