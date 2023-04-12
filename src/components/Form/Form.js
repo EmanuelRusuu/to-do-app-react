@@ -57,8 +57,8 @@ export default function Form({
                     name="todos"
                     className="filter-todo"
                 >
-                    <option value="all">All tasks</option>
-                    <option value="completed">Finished</option>
+                    <option value="all">All</option>
+                    <option value="completed">Done</option>
                     <option value="uncompleted">To do</option>
                 </select>
             </div>

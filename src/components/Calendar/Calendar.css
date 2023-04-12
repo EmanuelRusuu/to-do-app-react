@@ -46,7 +46,7 @@
     justify-content: center;
     cursor: default;
     padding: 0 auto;
-    width: 50%;
+    width: 100%;
     margin-bottom: 0.2rem;
     color: var(--color-black);
 }
@@ -170,8 +170,57 @@
     justify-content: center;
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-height: 850px) {
     .calendar {
-        height: 90%;
+        height: 87%;
+    }
+}
+
+@media screen and (min-height: 1000px) {
+    .calendar {
+        height: 60%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .calendar {
+        width: 57%;
+    }
+
+    .day-names {
+        display: none;
+    }
+
+    .day-names-resize1 {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .calendar {
+        width: 100%;
+    }
+
+    .neata {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .day-names-resize1 {
+        display: none;
+    }
+
+    .day-names-resize2 {
+        display: flex;
+    }
+
+    .neata {
+        font-size: 0.9rem;
+    }
+
+    .arrows-for-current-month {
+        width: fit-content;
     }
 }

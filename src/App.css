@@ -57,3 +57,18 @@
         padding: 1rem;
     }
 }
+
+@media screen and (max-width: 800px) {
+    .main-container {
+        height: fit-content;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .main-container {
+        padding: 1rem;
+    }
+}
