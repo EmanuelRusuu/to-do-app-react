@@ -46,10 +46,10 @@ export default function Calendar() {
         return '';
     }
 
-    const rows = calendar.length === 5 ? '85%' : '95%';
+    const rows = calendar.length === 5 ? '7.21rem' : '6rem';
 
     return (
-        <div className="calendar" style={{ height: rows }}>
+        <div className="calendar">
             <div className="calendar-container-top">
                 <CalendarHeader value={value} setValue={setValue} />
             </div>
@@ -87,7 +87,8 @@ export default function Calendar() {
                     <div>
                         {week.map((day) => (
                             <div
-                                className={`day`}
+                                className="day"
+                                style={{ height: rows }}
                                 onClick={() =>
                                     !beforeToday(day) && handleDateClick(day)
                                 }

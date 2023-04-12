@@ -69,7 +69,7 @@ export default function ToDoContainer() {
             </div>
             <div className="task-form-and-tasks">
                 <div className="text-box">
-                    <h4 className="future-tasks-text">Add a task</h4>
+                    <h4 className="future-tasks-text">Add tasks</h4>
                     <Form
                         inputText={inputText}
                         todos={todos}

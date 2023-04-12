@@ -41,7 +41,7 @@ export default function Form({
                     onChange={inputTextHandler}
                     type="text"
                     className="todo-input"
-                    placeholder="add task here"
+                    placeholder="write task"
                 />
                 <button
                     onClick={submitToDoHandler}
