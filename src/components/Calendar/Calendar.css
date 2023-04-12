@@ -224,3 +224,9 @@
         width: fit-content;
     }
 }
+
+@media screen and (max-width: 350px) {
+    .neata {
+        font-size: 0.85rem;
+    }
+}
